@@ -1,14 +1,13 @@
 package com.example.myeventapp
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.room.Room
 import com.example.myeventapp.databinding.ActivityAppBinding
 import com.example.myeventapp.db.EventAppDatabase
-import com.example.myeventapp.ui.EventListFragment
+
 
 class AppActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAppBinding
@@ -23,6 +22,12 @@ class AppActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment2)
         binding.bottomNavigationView.setupWithNavController(navController)
 
+        val email = intent.getStringExtra("email").toString()
+        Log.d("email", email)
+        val bundle = Bundle()
+        bundle.putString("email", email)
 
+        val f = HomeFragment()
+        f.setArguments(bundle);
     }
 }

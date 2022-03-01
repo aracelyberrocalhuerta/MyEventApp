@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph2"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/homeFragment2">
 
     <fragment
         android:id="@+id/eventListFragment"
@@ -20,13 +20,17 @@
         android:label="fragment_event_add"
         tools:layout="@layout/fragment_event_add" />
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.myeventapp.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
-    <fragment
         android:id="@+id/calendarFragment"
         android:name="com.example.myeventapp.CalendarFragment"
         android:label="fragment_calendar"
         tools:layout="@layout/fragment_calendar" />
+    <fragment
+        android:id="@+id/homeFragment2"
+        android:name="com.example.myeventapp.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <argument
+            android:name="email"
+            app:argType="string" />
+    </fragment>
 </navigation>

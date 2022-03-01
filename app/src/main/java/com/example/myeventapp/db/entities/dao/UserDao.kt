@@ -17,6 +17,8 @@ interface UserDao {
     @Query("select * from users where name = :name limit 1")
     suspend fun findUserByName(name: Int): User?
 
+    @Query("select * from users where email = :email limit 1")
+     fun findUserByEmail(email: String): User
     /* --- POST --- */
     @Insert
     fun insert(user: User)
